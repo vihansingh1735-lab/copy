@@ -7,13 +7,16 @@
 
 body {
   background: #06080d;
-  color: #fff;
+  color: #ffffff;
+  overflow-x: hidden;
 }
 
+/* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 20px 10%;
+  align-items: center;
+  padding: 18px 6%;
   border-bottom: 1px solid #111;
 }
 
@@ -22,14 +25,22 @@ body {
   letter-spacing: 2px;
 }
 
-.navbar a {
+.navbar nav a {
   color: #aaa;
-  margin-left: 20px;
+  margin-left: 18px;
   text-decoration: none;
+  font-size: 0.9rem;
 }
 
+.navbar nav a:hover {
+  color: #fff;
+}
+
+/* HERO */
 .hero {
   min-height: 85vh;
+  width: 100%;
+  padding: 0 6%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,55 +49,39 @@ body {
 }
 
 .title {
-  font-size: 3.2rem;
+  font-size: clamp(2.2rem, 7vw, 3.4rem);
+  font-weight: 900;
   letter-spacing: 4px;
+  line-height: 1.15;
 }
 
 .subtitle {
-  margin-top: 15px;
+  margin-top: 16px;
+  font-size: 0.95rem;
   color: #888;
+  max-width: 90%;
+  line-height: 1.4;
 }
 
-.section {
-  padding: 90px 10%;
-  text-align: center;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-  margin-top: 40px;
-}
-
-.card {
-  background: #101522;
-  padding: 30px;
-  border-radius: 10px;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.6s ease;
-}
-
-.card.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.ops {
-  list-style: none;
-  text-align: left;
+/* BUTTONS */
+.buttons {
+  margin-top: 35px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
 }
 
 .btn {
   padding: 14px 30px;
   border-radius: 6px;
   text-decoration: none;
+  font-weight: 600;
 }
 
 .primary {
   background: #d62828;
-  color: white;
+  color: #fff;
 }
 
 .secondary {
@@ -94,12 +89,30 @@ body {
   color: #d62828;
 }
 
-.big {
-  font-size: 1.1rem;
-}
-
+/* FOOTER */
 footer {
-  padding: 30px;
+  padding: 25px;
   text-align: center;
   color: #666;
+  font-size: 0.85rem;
+}
+
+/* 📱 MOBILE FIXES */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 5%;
+  }
+
+  .navbar nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .navbar nav a {
+    margin: 0;
+  }
 }
